@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Session Hijacking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card victim-panel">
+            <h2>👤 Painel da Vítima</h2>
+            <p>Faça login para gerar uma sessão válida.</p>
+            
+            <div id="loginForm">
+                <input type="text" placeholder="Usuário (ex: admin)" id="username">
+                <input type="password" placeholder="Senha" value="123456">
+                <button onclick="login()">Entrar no Sistema</button>
+            </div>
+
+            <div id="dashboard" style="display:none;">
+                <p>Status: <span style="color:var(--accent)">Logado</span></p>
+                <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                    <small>Seu Cookie de Sessão (Secreto):</small><br>
+                    <code id="userCookie">---</code>
+                </div>
+                <br>
+                <p>⚠️ Link Malicioso (XSS):</p>
+                <button onclick="simulateClick()" style="background: var(--danger); color: white;">
+                    Ganhar Prêmio Grátis! (Clique aqui)
+                </button>
+            </div>
+        </div>
+
+        <div class="card hacker-panel">
+            <h2>🕵️ Terminal do Atacante</h2>
+            <p>Escutando tráfego de rede...</p>
+            <div class="log-window" id="hackerConsole">
+                > Aguardando vítima...<br>
+            </div>
+            <button onclick="hijackSession()" id="btnHijack" disabled style="background: #333; cursor: not-allowed;">
+                Usar Sessão Roubada
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
