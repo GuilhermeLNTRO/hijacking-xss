@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cenário Vulnerável | Demonstração</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vulnerable.css">
+</head>
+<body class="vuln-theme">
+    <a href="/" class="nav-back">← Voltar ao Hub</a>
+    <div class="page-container">
+        <div class="split-view">
+            <div class="glass-card">
+                <h2>👤 Painel da Vítima (Cliente)</h2>
+                <p>Este site usa cookies inseguros acessíveis via JavaScript.</p>
+                
+                <div id="loginForm">
+                    <input type="text" id="username" placeholder="Usuário" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+                    <button onclick="vulnLogin()">Simular Login Inseguro</button>
+                </div>
+
+                <div id="dashboard" style="display:none;">
+                    <p>Status: <span class="accent-color">Logado</span></p>
+                    <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <small>Seu Cookie Exposto (document.cookie):</small><br>
+                        <code id="userCookie">---</code>
+                    </div>
+                    <br>
+                    <p>⚠️ Link Malicioso (XSS Simulado):</p>
+                    <button onclick="simulateXSS()" style="background: #333; border: 1px solid var(--vuln-color);">
+                        CLIQUE AQUI PARA GANHAR UM BRINDE!
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass-card hacker-panel">
+                <h2>🕵️ Console do Atacante</h2>
+                <p>Aguardando execução de script XSS...</p>
+                <div class="log-window" id="hackerConsole">
+                    > Escutando rede...<br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vulnerable.js"></script>
+</body>
+</html>

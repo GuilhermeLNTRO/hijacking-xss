@@ -1,0 +1,14 @@
+/* Estilos específicos para a página vulnerável */
+body.vuln-theme {
+    background-image: radial-gradient(circle at top left, #3f0f17 0%, #0f172a 100%);
+}
+.vuln-theme .accent-color { color: var(--vuln-color); }
+.vuln-theme .hacker-panel { border: 1px solid var(--vuln-color); }
+.vuln-theme .log-window {
+    background: #000; color: var(--vuln-color);
+    font-family: monospace; padding: 1rem; height: 200px; overflow-y: auto;
+}
+.vuln-theme button {
+    background: var(--vuln-color); color: white; border: none;
+    padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%;
+}

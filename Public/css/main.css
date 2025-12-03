@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap');
+
+:root {
+    --bg-main: #0f172a;
+    --text-primary: #f8fafc;
+    --vuln-color: #f43f5e; /* Vermelho */
+    --secure-color: #10b981; /* Verde */
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Layout da Home Page */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-image: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--vuln-color), var(--secure-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.choice-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.choice-card {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    width: 300px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.choice-card:hover { transform: translateY(-10px); }
+.choice-vuln:hover { border-color: var(--vuln-color); box-shadow: 0 0 20px rgba(244, 63, 94, 0.3); }
+.choice-secure:hover { border-color: var(--secure-color); box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+
+.btn-choice {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+.btn-vuln { background: var(--vuln-color); color: white; }
+.btn-secure { background: var(--secure-color); color: #064e3b; }
+
+/* Utilitários para as páginas internas */
+.page-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+.split-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.nav-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #aaa;
+    text-decoration: none;
+}

@@ -1,0 +1,17 @@
+/* Estilos específicos para a página segura */
+body.secure-theme {
+    background-image: radial-gradient(circle at top right, #064e3b 0%, #0f172a 100%);
+}
+.secure-theme .accent-color { color: var(--secure-color); }
+.secure-theme .shield-badge {
+    background: rgba(16, 185, 129, 0.2); color: var(--secure-color);
+    padding: 5px 12px; border-radius: 50px; border: 1px solid var(--secure-color);
+}
+.secure-theme .log-window-secure {
+    background: #111; color: #aaa;
+    font-family: monospace; padding: 1rem; border-radius: 8px;
+}
+.secure-theme button {
+    background: var(--secure-color); color: #064e3b; border: none;
+    padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cenário Seguro | Demonstração</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/secure.css">
+</head>
+<body class="secure-theme">
+    <a href="/" class="nav-back">← Voltar ao Hub</a>
+    <div class="page-container">
+        <div class="glass-card" style="max-width: 800px; width: 100%;">
+            <span class="shield-badge">🛡️ Proteção HttpOnly Ativa</span>
+            <h1>SecureVault Inc.</h1>
+            <p>Este sistema utiliza cookies protegidos pelo servidor.</p>
+
+            <div id="loginSection">
+                <input type="text" id="secUsername" placeholder="Usuário Autorizado" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+                <button onclick="secureLogin()">Autenticar via Backend Seguro</button>
+            </div>
+
+            <div id="protectedContent" style="display:none; margin-top: 20px;">
+                <h3>🔓 Acesso Concedido: <span id="displayUser" class="accent-color"></span></h3>
+                <p>Você está logado. O servidor definiu um cookie, mas tente encontrá-lo usando JavaScript:</p>
+                
+                <div class="log-window-secure">
+                    > console.log(document.cookie)<br>
+                    <span id="cookieResult" style="color: var(--secure-color); font-weight: bold; font-size: 1.2rem;">...</span>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #aaa;">
+                    Resultado: O JavaScript recebe uma string vazia. Se houvesse uma falha XSS aqui, o atacante não conseguiria roubar a sessão.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="js/secure.js"></script>
+</body>
+</html>
